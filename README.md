@@ -48,7 +48,7 @@ This repository provides Python code and Jupyter notebooks to simulate optical t
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/Smectic_Helices.git
+   git clone https://github.com/yzagzag/Smectic_Helices.git
    cd Smectic_Helices
    ```
 
