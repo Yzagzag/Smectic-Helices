@@ -57,7 +57,7 @@ This repository provides Python code and Jupyter notebooks to simulate optical t
    jupyter lab
    ```
 
-3. **Run the notebooks** in `./` or `notebooks/` to:
+3. **Run the notebooks**
    - Generate director fields for filament ribbon and helix geometries
    - Call LCPOM to compute optical textures
    - Compare simulated textures with microscopy images
