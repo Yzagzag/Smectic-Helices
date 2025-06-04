@@ -4,12 +4,17 @@ This repository provides Python code and Jupyter notebooks to simulate optical t
 
 <p align="center">
   <img 
-    src="texture_filaments.png" 
+    src="Smectic-Filaments.png" 
     alt="Simulated Single Filament Optical Textures" 
     width="800" 
   />
   <img 
-    src="texture_helices.png" 
+    src="Smectic-Ribbons.png" 
+    alt="Simulated Conjoined Filamentous Ribbon Optical Textures" 
+    width="800" 
+  />
+  <img 
+    src="Smectic-Helices.png" 
     alt="Simulated Helically Wrapped Filaments Optical Textures" 
     width="800" 
   />
