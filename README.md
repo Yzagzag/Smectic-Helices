@@ -13,11 +13,6 @@ This repository provides Python code and Jupyter notebooks to simulate optical t
     alt="Simulated Conjoined Filamentous Ribbon Optical Textures" 
     width="800" 
   />
-  <img 
-    src="Smectic-Helices.png" 
-    alt="Simulated Helically Wrapped Filaments Optical Textures" 
-    width="800" 
-  />
 </p>
 
 
