@@ -30,11 +30,11 @@ This repository provides Python code and Jupyter notebooks to simulate optical t
 ## Repository Structure
 
 ```
-├── Smectic_Single_Filament_Helix_Coalesced.ipynb
-├── Smectic_Double_Filament_Helix_Coalesced.ipynb
+├── LCPOM_Usage.ipynb
 ├── Smectic_Filaments.ipynb
-├── Smectic_Ribbon.ipynb
-└── lcpom_usage.ipynb
+├── Smectic_Ribbons.ipynb
+├── Smectic-Double-Filament-Helices-Method.ipynb
+└── Smectic-Double-Filament-Helices-Step.ipynb
 ```
 
 ## Prerequisites
