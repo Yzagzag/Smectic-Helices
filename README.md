@@ -94,7 +94,7 @@ Provides an example workflow for passing generated director fields to LCPOM and 
 
 ## Data Files
 
-The `Graphics` directory contains example director-field data generated from the double-helix model.
+To work, the `Graphics` directory should contain director-field data generated from the double-helix model.
 
 **director_raw.npz**
 
