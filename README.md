@@ -1,64 +1,17 @@
- # Smectic Filaments, Ribbons, and Helices
+# Smectic Filaments, Ribbons, and Helices
 
-This repository contains numerical and visualization code associated with the paper **“Arrested coalescence drives helical coiling and networking of filamentous smectic condensates.”** The code in this repository supports the theoretical modeling, numerical calculations, director-field construction, visualization, and simulated polarized optical microscopy presented throughout the manuscript.
-
-The repository includes both **MATLAB numerical calculations** used to evaluate the energetic and geometric models presented in the paper and **Python/Jupyter notebooks** for constructing and visualizing director fields in filamentous smectic materials, including single filaments, ribbons, and double-helical structures.
-
-The modeled director fields are generated from prescribed geometries using local tangent planes along filament centerlines. These local director configurations are mapped into a global three-dimensional coordinate system, interpolated onto regular grids, and can be passed to LCPOM to simulate polarized optical microscopy textures for comparison with experimental observations.
+This repository contains numerical and visualization code associated with the paper **“Arrested coalescence drives helical coiling and networking of filamentous smectic condensates.”** It includes MATLAB calculations for the energetic and geometric models presented in the paper, together with Python/Jupyter notebooks for constructing smectic director fields and simulating polarized optical microscopy textures.
 
 <p align="center">
-  <img
-    src="Smectic-Filaments.png"
-    alt="Simulated single filament optical textures"
-    width="800"
-  />
-  <img
-    src="Smectic-Ribbons.png"
-    alt="Simulated conjoined filament ribbon optical textures"
-    width="800"
-  />
+  <img src="Smectic-Filaments.png" alt="Simulated single filament optical textures" width="800"/>
+  <img src="Smectic-Ribbons.png" alt="Simulated conjoined filament ribbon optical textures" width="800"/>
 </p>
-
-## Features
-
-- **Numerical Modeling**
-  - MATLAB calculations associated with the theoretical models presented in the manuscript
-  - Energetic calculations for filament coalescence into ribbon and helical configurations
-  - Geometric calculations associated with ribbon and coil formation
-  - Numerical generation of theoretical plots used in the manuscript
-
-- **Director Field Generation**
-  - Single smectic filament geometries
-  - Smectic ribbon geometries
-  - Double-helical filament geometries
-  - Three-dimensional director field construction from local cross-sectional director configurations
-
-- **Local Tangent-Plane Construction**
-  - Analytical calculation of filament centerlines and tangent vectors
-  - Construction of local orthonormal coordinate frames
-  - Mapping of local director fields into the global coordinate system
-
-- **Director Field Interpolation**
-  - Conversion of scattered director data into regularly sampled three-dimensional fields
-  - Nearest-neighbor and spatial interpolation tools for visualization and optical simulations
-
-- **Optical Texture Simulation**
-  - Integration with LCPOM
-  - Simulation of polarized-light propagation through three-dimensional director fields
-  - Reconstruction of simulated optical microscopy textures
-
-- **Visualization**
-  - Three-dimensional visualization of filament and helix geometries
-  - Director-field visualization
-  - Cross-sectional and tilted-plane visualization
-  - Generation of graphics and animations for inspecting modeled director configurations
 
 ## Repository Structure
 
     Smectic-Helices/
     │
     ├── README.md
-    │
     ├── ArrestedCoalescenceNumerics.m
     │
     ├── Smectic_Filaments.ipynb
@@ -80,265 +33,82 @@ The modeled director fields are generated from prescribed geometries using local
     │
     └── old_versions/
 
-## Main Code and Notebooks
+## Code
 
-**ArrestedCoalescenceNumerics.m**
+**ArrestedCoalescenceNumerics.m**  
+MATLAB calculations used for the theoretical modeling in the manuscript, including ribbon energetics and geometry and the comparison between ribbon and coil energies.
 
-Contains the MATLAB numerical calculations associated with the theoretical modeling in the manuscript. The script regenerates numerical results and plots used in the paper, including calculations of ribbon energetics and geometry and the comparison between ribbon and coil energies.
+**Smectic_Filaments.ipynb**  
+Generates director fields for individual smectic filaments.
 
-**Smectic_Filaments.ipynb**
+**Smectic_Ribbons.ipynb**  
+Generates director fields for conjoined filamentous ribbons.
 
-Generates director fields for individual filament geometries and provides tools for inspecting the resulting director configurations.
+**Smectic-Double-Coil-Generation.ipynb**  
+Generates the three-dimensional geometry and director field of double-helical smectic filaments.
 
-**Smectic_Ribbons.ipynb**
+**Graphics/Graphics_3D.ipynb**  
+Provides interpolation and visualization tools for the generated three-dimensional director fields.
 
-Constructs director fields for conjoined filamentous ribbon geometries.
+**lc-pom/LCPOM_Usage.ipynb**  
+Passes generated director fields to LCPOM to calculate simulated polarized optical microscopy textures.
 
-**Smectic-Double-Coil-Generation.ipynb**
+## Director-Field Workflow
 
-Generates the three-dimensional geometry and director field of a double-helical smectic filament structure using local tangent-plane cross sections.
+Director fields are constructed from local cross-sectional configurations along prescribed filament centerlines and mapped into a global three-dimensional coordinate system.
 
-**Graphics/Graphics_3D.ipynb**
+The generated fields can be saved as scattered data (`director_raw.npz`) or interpolated onto a regular three-dimensional grid (`Interpolated_director_Lx400_Ly400_Lz400.npz`). The interpolated fields can then be passed to LCPOM for optical simulation.
 
-Provides visualization and interpolation tools for examining the generated three-dimensional director fields, including planar slices and helix geometry.
+## Requirements
 
-**lc-pom/LCPOM_Usage.ipynb**
+### Python
 
-Provides an example workflow for passing generated director fields to LCPOM and calculating simulated polarized optical microscopy textures.
-
-## Data Files
-
-The `Graphics` directory contains example director-field data generated from the double-helix model.
-
-**director_raw.npz**
-
-Contains the scattered three-dimensional director-field data generated directly from the filament geometry.
-
-Typical arrays include:
-
-    final_points
-    final_vectors
-
-where `final_points` contains the spatial coordinates and `final_vectors` contains the corresponding director orientations.
-
-**Interpolated_director_Lx400_Ly400_Lz400.npz**
-
-Contains the director field interpolated onto a regular three-dimensional grid for visualization and optical calculations.
-
-## Prerequisites
-
-### Python/Jupyter Code
-
-- Python 3.8 or higher
+- Python 3.8+
 - NumPy
 - SciPy
 - Matplotlib
 - Jupyter Notebook or JupyterLab
 - LCPOM: https://github.com/depablogroup/lc-pom
 
-The relevant LCPOM workflow and parameter file used with this repository are included in the `lc-pom` directory.
-
-### MATLAB Code
-
-The numerical calculations in `ArrestedCoalescenceNumerics.m` require MATLAB.
-
-## Installation
-
-Clone the repository:
-
-    git clone https://github.com/yzagzag/Smectic_Helices.git
-    cd Smectic_Helices
-
-Install the required Python packages if necessary:
-
-    pip
-
-This repository provides Python code and Jupyter notebooks for constructing and visualizing director fields in filamentous smectic materials, including single filaments, ribbons, and double-helical structures.
-
-The modeled director fields are generated from prescribed geometries using local tangent planes along filament centerlines. These local director configurations are mapped into a global three-dimensional coordinate system, interpolated onto regular grids, and can be passed to LCPOM to simulate polarized optical microscopy textures for comparison with experimental observations.
-
-<p align="center">
-  <img
-    src="Smectic-Filaments.png"
-    alt="Simulated single filament optical textures"
-    width="800"
-  />
-  <img
-    src="Smectic-Ribbons.png"
-    alt="Simulated conjoined filament ribbon optical textures"
-    width="800"
-  />
-</p>
-
-## Features
-
-- **Director Field Generation**
-  - Single smectic filament geometries
-  - Smectic ribbon geometries
-  - Double-helical filament geometries
-  - Three-dimensional director field construction from local cross-sectional director configurations
-
-- **Local Tangent-Plane Construction**
-  - Analytical calculation of filament centerlines and tangent vectors
-  - Construction of local orthonormal coordinate frames
-  - Mapping of local director fields into the global coordinate system
-
-- **Director Field Interpolation**
-  - Conversion of scattered director data into regularly sampled three-dimensional fields
-  - Nearest-neighbor and spatial interpolation tools for visualization and optical simulations
-
-- **Optical Texture Simulation**
-  - Integration with LCPOM
-  - Simulation of polarized-light propagation through three-dimensional director fields
-  - Reconstruction of simulated optical microscopy textures
-
-- **Visualization**
-  - Three-dimensional visualization of filament and helix geometries
-  - Director-field visualization
-  - Cross-sectional and tilted-plane visualization
-  - Generation of graphics and animations for inspecting modeled director configurations
-
-## Repository Structure
-
-    Smectic-Helices/
-    │
-    ├── README.md
-    │
-    ├── Smectic_Filaments.ipynb
-    ├── Smectic_Ribbons.ipynb
-    ├── Smectic-Double-Coil-Generation.ipynb
-    │
-    ├── Smectic-Filaments.png
-    ├── Smectic-Ribbons.png
-    │
-    ├── Graphics/
-    │   ├── Graphics_3D.ipynb
-    │   ├── director_raw.npz
-    │   ├── Interpolated_director_Lx400_Ly400_Lz400.npz
-    │   └── helix.png
-    │
-    ├── lc-pom/
-    │   ├── LCPOM_Usage.ipynb
-    │   └── params.py
-    │
-    └── old_versions/
-
-## Main Notebooks
-
-**Smectic_Filaments.ipynb**
-
-Generates director fields for individual filament geometries and provides tools for inspecting the resulting director configurations.
-
-**Smectic_Ribbons.ipynb**
-
-Constructs director fields for conjoined filamentous ribbon geometries.
-
-**Smectic-Double-Coil-Generation.ipynb**
-
-Generates the three-dimensional geometry and director field of a double-helical smectic filament structure using local tangent-plane cross sections.
-
-**Graphics/Graphics_3D.ipynb**
-
-Provides visualization and interpolation tools for examining the generated three-dimensional director fields, including planar slices and helix geometry.
-
-**lc-pom/LCPOM_Usage.ipynb**
-
-Provides an example workflow for passing generated director fields to LCPOM and calculating simulated polarized optical microscopy textures.
-
-## Data Files
-
-To work, the `Graphics` directory should contain director-field data generated from the double-helix model.
-
-**director_raw.npz**
-
-Contains the scattered three-dimensional director-field data generated directly from the filament geometry.
-
-Typical arrays include:
-
-    final_points
-    final_vectors
-
-where `final_points` contains the spatial coordinates and `final_vectors` contains the corresponding director orientations.
-
-**Interpolated_director_Lx400_Ly400_Lz400.npz**
-
-Contains the director field interpolated onto a regular three-dimensional grid for visualization and optical calculations.
-
-## Prerequisites
-
-- Python 3.8 or higher
-- NumPy
-- SciPy
-- Matplotlib
-- Jupyter Notebook or JupyterLab
-- LCPOM: https://github.com/depablogroup/lc-pom
-
-The relevant LCPOM workflow and parameter file used with this repository are included in the `lc-pom` directory.
-
-## Installation
-
-Clone the repository:
-
-    git clone https://github.com/yzagzag/Smectic_Helices.git
-    cd Smectic_Helices
-
-Install the required Python packages if necessary:
+Install the Python dependencies with:
 
     pip install numpy scipy matplotlib jupyter
 
-Then start JupyterLab:
+### MATLAB
 
-    jupyter lab
+`ArrestedCoalescenceNumerics.m` requires MATLAB.
 
 ## Usage
 
-A typical workflow is:
+Clone the repository:
 
-1. Open one of the geometry-generation notebooks:
+    git clone https://github.com/yzagzag/Smectic_Helices.git
+    cd Smectic_Helices
 
-       Smectic_Filaments.ipynb
-       Smectic_Ribbons.ipynb
-       Smectic-Double-Coil-Generation.ipynb
+Start JupyterLab:
 
-2. Define the desired geometric and director-field parameters.
+    jupyter lab
 
-3. Generate the local director configurations and map them into the global three-dimensional geometry.
+For the director-field workflow:
 
-4. Save the resulting director field as scattered or interpolated data.
+1. Generate a filament, ribbon, or double-coil director field using the corresponding notebook.
+2. Use `Graphics/Graphics_3D.ipynb` to interpolate and visualize the field.
+3. Use `lc-pom/LCPOM_Usage.ipynb` to simulate polarized optical microscopy textures.
 
-5. Use `Graphics/Graphics_3D.ipynb` to inspect the resulting three-dimensional director field.
+The MATLAB calculations can be reproduced by running:
 
-6. Use `lc-pom/LCPOM_Usage.ipynb` to calculate simulated polarized optical microscopy textures.
-
-## Customization
-
-The notebooks can be modified to explore different geometries and optical conditions.
-
-Examples include:
-
-- Filament radius
-- Helix radius
-- Helical pitch
-- Number of turns
-- Filament spacing
-- Local director configuration
-- Spatial grid resolution
-- Interpolation parameters
-- Slice-plane orientation
-- Polarizer and analyzer angles used in LCPOM
+    ArrestedCoalescenceNumerics.m
 
 ## LCPOM
 
-Optical simulations are performed using the LCPOM package developed by the de Pablo group:
+Optical simulations use the LCPOM package developed by the de Pablo group:
 
 https://github.com/depablogroup/lc-pom
 
-LCPOM propagates polarized light through a three-dimensional liquid-crystal director field and can be used to generate simulated polarized optical microscopy textures from the director configurations produced in this repository.
+The relevant LCPOM workflow and parameters used for this work are included in the `lc-pom` directory.
 
 ## Contact
 
-Yvonne Zagzag
-
-University of Luxembourg
-
-Email: yvonne.zagzag@uni.lu
+Yvonne Zagzag  
+University of Luxembourg  
+yvonne.zagzag@uni.lu
