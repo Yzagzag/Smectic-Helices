@@ -1,6 +1,10 @@
 # Smectic Filaments, Ribbons, and Helices
 
-This repository contains numerical and visualization code associated with the paper **“Arrested coalescence drives helical coiling and networking of filamentous smectic condensates.”** It includes MATLAB calculations for the energetic and geometric models presented in the paper, together with Python/Jupyter notebooks for constructing smectic director fields and simulating polarized optical microscopy textures.
+This repository contains numerical and visualization code associated with the paper “Arrested coalescence drives helical coiling and networking of filamentous smectic condensates.”
+
+Preprint: arXiv:2603.12124
+
+The repository includes MATLAB calculations for the energetic and geometric models presented in the paper, together with Python/Jupyter notebooks for constructing smectic director fields and simulating polarized optical microscopy textures.
 
 <p align="center">
   <img src="Smectic-Filaments.png" alt="Simulated single filament optical textures" width="800"/>
