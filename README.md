@@ -9,8 +9,8 @@ The repository includes MATLAB calculations for the energetic and geometric mode
 <p align="center">
   <img src="Smectic-Filaments.png" alt="Simulated single filament optical textures" width="800"/>
   <img src="Smectic-Ribbons.png" alt="Simulated conjoined filament ribbon optical textures" width="800"/>
-  <img src="SIDoubleHelixRotation.png" alt="Simulated double-helix optical textures at different rotation angles" width="800"/>
   <img src="SIDoubleHelixSensitivity.png" alt="Double-helix optical texture sensitivity to geometric parameters" width="800"/>
+  <img src="SIDoubleHelixRotation.png" alt="Simulated double-helix optical textures at different rotation angles" width="550"/>
 </p>
 
 ## Repository Structure
@@ -26,8 +26,8 @@ The repository includes MATLAB calculations for the energetic and geometric mode
     │
     ├── Smectic-Filaments.png
     ├── Smectic-Ribbons.png
-    ├── SIDoubleHelixRotation.png
     ├── SIDoubleHelixSensitivity.png
+    ├── SIDoubleHelixRotation.png
     │
     ├── Graphics/
     │   ├── Graphics_3D.ipynb
@@ -63,16 +63,21 @@ Passes generated director fields to LCPOM to calculate simulated polarized optic
 
 ## Simulated Optical Textures and Parameters
 
-The four PNG files above show the simulated polarized optical microscopy textures used for comparison with the manuscript and supporting information:
+The four PNG files above show simulated polarized optical microscopy textures corresponding to the manuscript and supporting information.
 
-| Image | Description | Exposure, *I* |
+| Image | Manuscript correspondence | Exposure, *I* |
 | --- | --- | --- |
-| `Smectic-Filaments.png` | Single-filament optical textures | 1.5 AU |
-| `Smectic-Ribbons.png` | Partially coalesced ribbon optical textures | 1.5 AU |
-| `SIDoubleHelixRotation.png` | Double-helix textures at different viewing orientations | 1.5 AU |
-| `SIDoubleHelixSensitivity.png` | Sensitivity of double-helix textures to geometric parameters | 1.1 AU |
+| `Smectic-Filaments.png` | Single-filament textures (Fig. S5) | 1.5 AU |
+| `Smectic-Ribbons.png` | Ribbon textures (Fig. 4 and Fig. S6) | 1.5 AU |
+| `SIDoubleHelixSensitivity.png` | Double-helix geometric sensitivity (supporting information) | 1.1 AU |
+| `SIDoubleHelixRotation.png` | Double-helix viewing-angle dependence (Fig. 5 and supporting information) | 1.5 AU |
 
-For the simulated coil textures associated with **Figure 5 and the supporting-information figures**, the filament radius is **R_F = 0.66 µm** and the helix radius is **R = 0.5 µm**. The exposure is **I = 1.5 AU** for the main double-helix rotation images and **I = 1.1 AU** for the double-helix sensitivity images. These exposure values are simulation/display settings, not measured experimental illumination intensities.
+### Manuscript figure parameters
+
+- **Figure 4 (ribbons):** The simulated optical textures use an exposure of **I = 1.5 AU** and a filament radius of **R_F = 0.6 µm**.
+- **Figure 5 (double-helical coils):** The simulated optical textures use an exposure of **I = 1.1 AU**, a filament radius of **R_F = 0.5 µm**.
+
+The exposure values refer to LCPOM simulation/display settings rather than measured experimental illumination intensities.
 
 ## Director-Field Workflow
 
